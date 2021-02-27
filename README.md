@@ -1,2 +1,2 @@
 # RegressaoLinear
-Programas em python para calcular médias, regressoes lineares, variancias, dentre outros cálculos estatisticos
+Programas em python para calcular médias, regressões lineares, variâncias, dentre outros cálculos estatísticos
