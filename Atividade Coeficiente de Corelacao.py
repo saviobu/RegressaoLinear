@@ -41,6 +41,6 @@ print()
 print(df.to_string(index=False))
 
 plt.plot(df['Matematica'].values, df['Estatistica'].values,'ro')
-plt.plot(df['Regressao Linear'].values,df['Regressao Linear'].values)
+plt.plot(df['Matematica'].values,df['Regressao Linear'].values)
 plt.grid(True)
 plt.show()
