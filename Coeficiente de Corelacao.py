@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import math
+import matplotlib.pyplot as plt
 
 df = pd.DataFrame({'mes':[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],'faturamento':[25, 38, 29, 115, 82, 114, 120, 160, 153, 190, 239, 175]})
 x = df['mes']
@@ -17,6 +18,7 @@ soma2y = y.sum()*y.sum()
 r = (tam*somaxy - xy)/(math.sqrt( (tam*somax2 - soma2x)*(tam*somay2 - soma2y))) #Representa a qualidade dos dados/correlaçao ( reflexo com a realidade ), quanto mais proximo de 1 melhor
 b1 = (tam*somaxy - xy) / (tam*somax2 - soma2x) # Inclinação da reta
 b0 = (y.sum() - (b1*x.sum()))/tam # Interceptação da reta no eixo Y
+df ['Regressao Linear'] = (b0+(b1*x)).round(2) #aplica a regressao nos casos da variavel dependente
 
 rel = None
 if r>0.9 and r<=1.0:
@@ -38,3 +40,7 @@ print('Resultados: B1= '+str(b1.round(2))+', B0= '+str(b0.round(2)))
 print ('A correlacao entre os dados é '+rel+': '+str(r.round(4)))
 print()
 print(df.to_string(index=False))
+
+plt.plot(df['Matematica'].values, df['Estatistica'].values,'ro')
+plt.plot(df['Regressao Linear'].values,df['Regressao Linear'].values)
+plt.show()
