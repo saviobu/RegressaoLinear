@@ -32,6 +32,9 @@ elif r>0.5 and r<=0.6:
 elif  r<=0.5:
  rel='Impropria'
 
+df ['Regressao Linear'] = (b0+(b1*x)).round(2)
 print()
 print('Resultados: B1= '+str(b1.round(4))+', B0= '+str(b0.round(4)))
 print ('Dados com qualidade '+rel+': '+str(r.round(4)))
+print()
+print(df.to_string(index=False))
